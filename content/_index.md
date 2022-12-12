@@ -4,7 +4,7 @@ date: 2022-12-12T14:38:32+05:30
 draft: false
 ---
 
-Welcome to the Pepipost API Documentation. If you’re new to Pepipost, create a free [account](https://ninjaemail.cloud) and follow to get started.
+Welcome to the Ninjaemail API Documentation. If you’re new to Ninjaemail, create a free [account](https://ninjaemail.cloud) and follow to get started.
 
 
 Easily connect and send your application emails with our API and SMTP relay for maximum deliverability, reliability, and scalability
