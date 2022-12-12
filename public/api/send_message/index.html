@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Send message - Ninjaemail</title>
+<meta name="description" content="Developer documentation">
+<meta name="generator" content="Hugo 0.108.0">
+<link href="https://example.com/index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://example.com/api/send_message/">
+<link rel="stylesheet" href="https://example.com/css/theme.min.css">
+<link rel="stylesheet" href="https://example.com/css/chroma.min.css">
+<script defer src="https://example.com/js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://example.com/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Send message" />
+<meta property="og:description" content="This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.
+Request Endpoint POST &lt;endpoint&gt;/api/v1/send/message
+Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/api/send_message/" /><meta property="og:image" content="https://example.com/images/og-image.png"/><meta property="article:section" content="API" />
+<meta property="article:published_time" content="2022-12-12T17:46:26+05:30" />
+<meta property="article:modified_time" content="2022-12-12T17:46:26+05:30" /><meta property="og:site_name" content="Hugo Techdoc Theme" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/images/og-image.png"/>
+
+<meta name="twitter:title" content="Send message"/>
+<meta name="twitter:description" content="This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.
+Request Endpoint POST &lt;endpoint&gt;/api/v1/send/message
+Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details."/>
+<meta itemprop="name" content="Send message">
+<meta itemprop="description" content="This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.
+Request Endpoint POST &lt;endpoint&gt;/api/v1/send/message
+Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details."><meta itemprop="datePublished" content="2022-12-12T17:46:26+05:30" />
+<meta itemprop="dateModified" content="2022-12-12T17:46:26+05:30" />
+<meta itemprop="wordCount" content="265"><meta itemprop="image" content="https://example.com/images/og-image.png"/>
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Ninjaemail</h1><a href="https://github.com/njclouds/njdeveloper" class="github"><i class="fab fa-github"></i></a>
+<p class="description">Developer documentation</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/"><i class='fa fa-heart'></i>&nbsp;Home</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>Send message</h1>
+<p>This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.</p>
+<h2 id="request">Request</h2>
+<h3 id="endpoint">Endpoint</h3>
+<p><code>POST &lt;endpoint&gt;/api/v1/send/message</code></p>
+<h3 id="authentication">Authentication</h3>
+<h4 id="headers">Headers</h4>
+<table>
+<thead>
+<tr>
+<th>Fields</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-Auth-Token</td>
+<td>&lt;secret_token&gt;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-body">Request Body</h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td>Array</td>
+<td>The e-mail addresses of the recipients (max 50)</td>
+</tr>
+<tr>
+<td>cc</td>
+<td>Array</td>
+<td>The e-mail addresses of the CC contacts (max 50)</td>
+</tr>
+<tr>
+<td>bcc</td>
+<td>Array</td>
+<td>The e-mail addresses of the BCC contacts (max 50)</td>
+</tr>
+<tr>
+<td>from</td>
+<td>String</td>
+<td>The e-mail address for the From header</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>String</td>
+<td>The subject of the email</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>String</td>
+<td>The tag of the email</td>
+</tr>
+<tr>
+<td>html_body</td>
+<td>String</td>
+<td>The HTML body of the e-mail</td>
+</tr>
+<tr>
+<td>attachments</td>
+<td>Array</td>
+<td>You need to provide <a href="#attachments-object">Array of Objects</a> with more details.</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>Hash</td>
+<td>A hash of additional headers</td>
+</tr>
+</tbody>
+</table>
+<h4 id="attachments-object">Attachments Object</h4>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Filename</td>
+</tr>
+<tr>
+<td>content_type</td>
+<td>String</td>
+<td>File mime type like <code>text/csv</code>, <code>image/jpeg</code> etc</td>
+</tr>
+<tr>
+<td>data</td>
+<td>String</td>
+<td>Base64 encoded file content</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sample-curl-call">Sample curl call</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X POST <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   -H <span style="color:#e6db74">&#34;Content-Type:application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   -H <span style="color:#e6db74">&#34;X-Server-API-Key:secret_token&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;from&#34;:&#34;from@domain.com&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;to&#34;:[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;dre_to_1@example.com&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;dre_to_2@example.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;cc&#34;:[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       &#34;dre_cc1@example.com&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       &#34;dre_cc2@example.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   ],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bcc&#34;:[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       &#34;dre_bcc@example.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   ],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;subject&#34;:&#34;Testing from API&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;plain_body&#34;:&#34;This is plain body&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;html_body&#34;:&#34;&lt;b&gt;This is plain body&lt;/b&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;tag&#34;:&#34;campaign_1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;headers&#34;:{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;header1&#34;:&#34;test_header_1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;header2&#34;:&#34;test_header_2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;attachments&#34;:[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;name&#34;:&#34;test.csv&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;content_type&#34;:&#34;text/csv&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;data&#34;:&#34;cmVjb3JkMUBleGFtcGxlLmNvbQ0KcmVjb3JkMkBleGFtcGxlLmNvbQ0K&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> <span style="color:#e6db74">&#39;https://api.endpoint.com/api/v1/send/message&#39;</span>
+</span></span></code></pre></div><h2 id="response">Response</h2>
+<h3 id="headers-1">Headers</h3>
+<p><code>200 OK</code></p>
+<h3 id="body">Body</h3>
+<h4 id="success">Success</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;success&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;time&#34;</span>: <span style="color:#ae81ff">0.25</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;flags&#34;</span>: {},
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;data&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;message_id&#34;</span>: <span style="color:#e6db74">&#34;bdaf4be2-c29a-4c57-8be9-21d3546430c6@rp.postal.ninjaemail.cloud&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;messages&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;dre_to_1@example.com&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">400147</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;B8jbY7GcteCf&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;dre_to_2@example.com&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">400148</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;RfPQWWl074OR&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;dre_cc1@example.com&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">400149</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;ji1rpo3Ataub&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;dre_cc2@example.com&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">400150</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;vhUjIUTfdwkt&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;dre_cc3@example.com&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">400151</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;exSEBMlJaOcK&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="error">Error</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;error&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;data&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;code&#34;</span>: <span style="color:#e6db74">&#34;InvalidServerAPIKey&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;The API token provided in X-Server-API-Key was not valid.&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;vYjATVF1jh3AxkaqmXFAggfDd&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="edit-meta">
+Last updated on 12 Dec 2022
+
+
+<br>
+Published on 12 Dec 2022
+<br><a href="https://github.com/njclouds/njdeveloper/edit/master/API/send_message.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://example.com/api/" title="API"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - API</a>
+<a class="nav nav-next" href="https://example.com/smtp/" title="SMTP">Next - SMTP <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://example.com">Home</a></li>
+
+<li class=" has-sub-menu"><a href="https://example.com/smtp/">SMTP<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://example.com/smtp/swaks/">Swaks</a></li>
+</ul>
+  
+</li>
+
+<li class="parent has-sub-menu"><a href="https://example.com/api/">API<span class="mark opened">-</span></a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="https://example.com/api/send_message/">Send message</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
