@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://developers.ninjaemail.cloud/api/send_message/</loc>
+    <lastmod>2022-12-12T17:46:26+05:30</lastmod>
+  </url><url>
+    <loc>https://developers.ninjaemail.cloud/smtp/</loc>
+    <lastmod>2022-12-12T17:06:01+05:30</lastmod>
+  </url><url>
+    <loc>https://developers.ninjaemail.cloud/api/</loc>
+    <lastmod>2022-12-12T15:15:15+05:30</lastmod>
+  </url><url>
+    <loc>https://developers.ninjaemail.cloud/smtp/swaks/</loc>
+    <lastmod>2022-12-12T15:07:33+05:30</lastmod>
+  </url><url>
+    <loc>https://developers.ninjaemail.cloud/</loc>
+    <lastmod>2022-12-12T14:38:32+05:30</lastmod>
+  </url><url>
+    <loc>https://developers.ninjaemail.cloud/categories/</loc>
+  </url><url>
+    <loc>https://developers.ninjaemail.cloud/tags/</loc>
+  </url>
+</urlset>
