@@ -1,0 +1,2 @@
+# njdeveloper
+Ninjaemail documentations
