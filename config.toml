@@ -12,6 +12,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
+
 pluralizeListTitles = false
 
 [params]
