@@ -2,6 +2,7 @@
 title: "SMTP"
 date: 2022-12-12T17:06:01+05:30
 draft: false
+weight: 10
 ---
 
 ### What is SMTP?

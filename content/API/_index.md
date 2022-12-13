@@ -2,6 +2,7 @@
 title: "API"
 date: 2022-12-12T15:15:15+05:30
 draft: false
+weight: 20
 ---
 
 ## Getting Started

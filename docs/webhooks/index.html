@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Webhooks - Ninjaemail</title>
+<meta name="description" content="Developer documentation">
+<meta name="generator" content="Hugo 0.108.0">
+<link href="https://developers.ninjaemail.cloud/index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://developers.ninjaemail.cloud/webhooks/">
+<link rel="stylesheet" href="https://developers.ninjaemail.cloud/css/theme.min.css">
+<link rel="stylesheet" href="https://developers.ninjaemail.cloud/css/chroma.min.css">
+<script defer src="https://developers.ninjaemail.cloud/js/fontawesome6/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha256-4XodgW4TwIJuDtf+v6vDJ39FVxI0veC/kSCCmnFp7ck=" crossorigin="anonymous"></script>
+<script src="https://developers.ninjaemail.cloud/js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Webhooks" />
+<meta property="og:description" content="Developer documentation" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://developers.ninjaemail.cloud/webhooks/" /><meta property="og:image" content="https://developers.ninjaemail.cloud/images/og-image.png"/><meta property="og:site_name" content="Hugo Techdoc Theme" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://developers.ninjaemail.cloud/images/og-image.png"/>
+
+<meta name="twitter:title" content="Webhooks"/>
+<meta name="twitter:description" content="Developer documentation"/>
+<meta itemprop="name" content="Webhooks">
+<meta itemprop="description" content="Developer documentation"></head>
+<body><div class="container"><header>
+<h1>Ninjaemail</h1><a href="https://github.com/njclouds/njdeveloper" class="github"><i class="fab fa-github"></i></a>
+<p class="description">Developer documentation</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li id="home" class=""><a href="/"><i class='fa fa-heart'></i>&nbsp;Home</a></li></ul>
+</nav>
+</div>
+
+<div class="content-container">
+<main><h1>Webhooks</h1><p>A Webhook is a way to deliver events like open, click, bounce, etc. over the HTTP Protocol which helps to integrate with various applications.</p>
+<h2 id="webhook-events">Webhook Events</h2>
+<table>
+<thead>
+<tr>
+<th>Events</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageSent</td>
+<td>An e-mail has been successfully delivered to its endpoint (either SMTP or HTTP).</td>
+</tr>
+<tr>
+<td>MessageDelayed</td>
+<td>An e-mail has been delayed due to an issue with the receiving endpoint. It will be retried automatically.</td>
+</tr>
+<tr>
+<td>MessageDeliveryFailed</td>
+<td>An e-mail cannot be delivered to its endpoint. This is a permanent failure so it will no be retried.</td>
+</tr>
+<tr>
+<td>MessageHeld</td>
+<td>An e-mail has been held in Postal. This will be because a limit has been reached or your server is in development mode.</td>
+</tr>
+<tr>
+<td>MessageBounced</td>
+<td>We received a bounce message in response to an email which had previously been successfully sent.</td>
+</tr>
+<tr>
+<td>MessageLinkClicked</td>
+<td>A link in one of your outbound messages has been clicked.</td>
+</tr>
+<tr>
+<td>MessageLoaded</td>
+<td>A message you have sent has been loaded.</td>
+</tr>
+<tr>
+<td>DomainDNSError</td>
+<td>This will be triggered when we detect an issue with the DNS configuration for any domain for this server.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="webhook-sample-response">Webhook Sample Response</h2>
+<h3 id="sent">Sent</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;event&#34;</span>: <span style="color:#e6db74">&#34;MessageSent&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1670907960.484763</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;payload&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;message&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">28</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;MWGhl8YadqgK&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;outgoing&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;message_id&#34;</span>: <span style="color:#e6db74">&#34;20221211224752.067922@hostname.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;to@example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;from@fromdomain.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;subject&#34;</span>: <span style="color:#e6db74">&#34;This is the test subject.&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1670779075.962122</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;spam_status&#34;</span>: <span style="color:#e6db74">&#34;NotChecked&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;tag&#34;</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;Sent&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;details&#34;</span>: <span style="color:#e6db74">&#34;Message for to@example.com accepted by example.com (x.x.x.x)&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;output&#34;</span>: <span style="color:#e6db74">&#34;250 OK : queued as gh8lPitJTJxlLpUdwuBZzXVHpMwQ\n&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_with_ssl&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1670907960.308573</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;time&#34;</span>: <span style="color:#ae81ff">0.83</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;uuid&#34;</span>: <span style="color:#e6db74">&#34;31832909-22db-4b7d-8f09-93fd6853736b&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="bounce">Bounce</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;event&#34;</span>: <span style="color:#e6db74">&#34;MessageDeliveryFailed&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1670911506.9640582</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;payload&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;message&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">29</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;mQ2SFRlihhdG&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;outgoing&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;message_id&#34;</span>: <span style="color:#e6db74">&#34;53f3957a-e072-427a-843c-f2444b81ee52@hostname.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;to@example.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;from@fromdomain.com&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;subject&#34;</span>: <span style="color:#e6db74">&#34;This is the test subject.&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1670911462.998097</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;spam_status&#34;</span>: <span style="color:#e6db74">&#34;NotChecked&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;tag&#34;</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;HardFail&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;details&#34;</span>: <span style="color:#e6db74">&#34;Permanent SMTP delivery error when sending to example.com (x.x.x.x)&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;output&#34;</span>: <span style="color:#e6db74">&#34;550 \n&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sent_with_ssl&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1670911506.920094</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;time&#34;</span>: <span style="color:#ae81ff">20.55</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;uuid&#34;</span>: <span style="color:#e6db74">&#34;7e44eb7d-f30b-403c-92ec-0bd2884a5efa&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="edit-meta">
+Last updated on 13 Dec 2022
+
+
+<br>
+Published on 13 Dec 2022
+<br><a href="https://github.com/njclouds/njdeveloper/tree/main/content/Webhooks/_index.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://developers.ninjaemail.cloud/api/send_message/" title="Send message"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - Send message</a>
+<a class="nav nav-next" href="https://developers.ninjaemail.cloud/smtp/" title="SMTP">Next - SMTP <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main>
+<div class="sidebar">
+
+<nav class="slide-menu">
+<ul>
+<li class=""><a href="https://developers.ninjaemail.cloud">Home</a></li>
+
+<li class=" has-sub-menu"><a href="https://developers.ninjaemail.cloud/smtp/">SMTP<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://developers.ninjaemail.cloud/smtp/swaks/">Swaks</a></li>
+</ul>
+  
+</li>
+
+<li class=" has-sub-menu"><a href="https://developers.ninjaemail.cloud/api/">API<span class="mark closed">+</span></a>
+  
+<ul class="sub-menu">
+<li class=""><a href="https://developers.ninjaemail.cloud/api/send_message/">Send message</a></li>
+</ul>
+  
+</li>
+
+<li class=" active"><a href="https://developers.ninjaemail.cloud/webhooks/">Webhooks</a>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>
