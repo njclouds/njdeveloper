@@ -19,7 +19,7 @@ This endpoint is solely responsible for sending emails over Ninjaemail's API.
 
 | Fields | Value |
 |--------------|----------------|
-| X-Auth-Token | <secret_token> |
+| X-Server-API-Key | <secret_token> |
 
 
 ### Request Body
@@ -82,7 +82,7 @@ curl -i -X POST \
     }
   ]
 }' \
- 'https://api.endpoint.com/api/v1/send/message'
+ 'https://<endpoint>/api/v1/send/message'
 ```
 
 ## Response

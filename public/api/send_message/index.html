@@ -20,7 +20,7 @@
 <meta property="og:title" content="Send message" />
 <meta property="og:description" content="This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.
 Request Endpoint POST &lt;endpoint&gt;/api/v1/send/message
-Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details." />
+Authentication Headers Fields Value X-Server-API-Key &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://developers.ninjaemail.cloud/api/send_message/" /><meta property="og:image" content="https://developers.ninjaemail.cloud/images/og-image.png"/><meta property="article:section" content="API" />
 <meta property="article:published_time" content="2022-12-12T17:46:26+05:30" />
@@ -31,11 +31,11 @@ Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Bo
 <meta name="twitter:title" content="Send message"/>
 <meta name="twitter:description" content="This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.
 Request Endpoint POST &lt;endpoint&gt;/api/v1/send/message
-Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details."/>
+Authentication Headers Fields Value X-Server-API-Key &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details."/>
 <meta itemprop="name" content="Send message">
 <meta itemprop="description" content="This endpoint is solely responsible for sending emails over Ninjaemail&rsquo;s API.
 Request Endpoint POST &lt;endpoint&gt;/api/v1/send/message
-Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details."><meta itemprop="datePublished" content="2022-12-12T17:46:26+05:30" />
+Authentication Headers Fields Value X-Server-API-Key &lt;secret_token&gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details."><meta itemprop="datePublished" content="2022-12-12T17:46:26+05:30" />
 <meta itemprop="dateModified" content="2022-12-12T17:46:26+05:30" />
 <meta itemprop="wordCount" content="265"><meta itemprop="image" content="https://developers.ninjaemail.cloud/images/og-image.png"/>
 <meta itemprop="keywords" content="" /></head>
@@ -68,7 +68,7 @@ Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Bo
 </thead>
 <tbody>
 <tr>
-<td>X-Auth-Token</td>
+<td>X-Server-API-Key</td>
 <td>&lt;secret_token&gt;</td>
 </tr>
 </tbody>
@@ -191,7 +191,7 @@ Authentication Headers Fields Value X-Auth-Token &lt;secret_token&gt; Request Bo
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ]
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> <span style="color:#e6db74">&#39;https://api.endpoint.com/api/v1/send/message&#39;</span>
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span> <span style="color:#e6db74">&#39;https://&lt;endpoint&gt;/api/v1/send/message&#39;</span>
 </span></span></code></pre></div><h2 id="response">Response</h2>
 <h3 id="headers-1">Headers</h3>
 <p><code>200 OK</code></p>
@@ -243,7 +243,7 @@ Last updated on 12 Dec 2022
 <br>
 Published on 12 Dec 2022
 <br><a href="https://github.com/njclouds/njdeveloper/tree/main/content/API/send_message.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://developers.ninjaemail.cloud/api/" title="API"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - API</a>
-<a class="nav nav-next" href="https://developers.ninjaemail.cloud/smtp/" title="SMTP">Next - SMTP <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://developers.ninjaemail.cloud/webhooks/" title="Webhooks">Next - Webhooks <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
 </footer>
 </main>
@@ -266,6 +266,10 @@ Published on 12 Dec 2022
 <ul class="sub-menu">
 <li class="active"><a href="https://developers.ninjaemail.cloud/api/send_message/">Send message</a></li>
 </ul>
+  
+</li>
+
+<li class=""><a href="https://developers.ninjaemail.cloud/webhooks/">Webhooks</a>
   
 </li>
 </ul>

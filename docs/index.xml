@@ -15,7 +15,7 @@
       <guid>https://developers.ninjaemail.cloud/api/send_message/</guid>
       <description>This endpoint is solely responsible for sending emails over Ninjaemail&amp;rsquo;s API.
 Request Endpoint POST &amp;lt;endpoint&amp;gt;/api/v1/send/message
-Authentication Headers Fields Value X-Auth-Token &amp;lt;secret_token&amp;gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details.</description>
+Authentication Headers Fields Value X-Server-API-Key &amp;lt;secret_token&amp;gt; Request Body Parameters Type Details to Array The e-mail addresses of the recipients (max 50) cc Array The e-mail addresses of the CC contacts (max 50) bcc Array The e-mail addresses of the BCC contacts (max 50) from String The e-mail address for the From header subject String The subject of the email tag String The tag of the email html_body String The HTML body of the e-mail attachments Array You need to provide Array of Objects with more details.</description>
     </item>
     
     <item>
